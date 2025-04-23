@@ -147,35 +147,6 @@ describe('JS6 Lab Tests:', () => {
       expect(dayOfTheWeek(6)).to.equal('Saturday')
       expect(dayOfTheWeek(4)).to.equal('Thursday')
     })
-
-    describe('Example Failed Test: Add Two Numbers', () => {
-      it('#Should fail', () => {
-        const dayOfTheWeek = (num) => {
-          switch (num) {
-            case 1:
-              return 'Monday'
-            case 2:
-              return 'Tuesday'
-            case 3:
-              return 'Wednesday'
-            case 4:
-              return 'Thursday'
-            case 5:
-              return 'Friday'
-            case 6:
-              return 'Saturday'
-            case 7:
-              return 'Sunday'
-            default:
-              console.log('Err. Something went wrong.')
-          }
-        }
-       
-        console.log(dayOfTheWeek(5)) // should log Friday
-
-        expect(dayOfTheWeek(3)).to.equal('Wednesday')
-      })
-    })
   })
 })
 
@@ -216,41 +187,6 @@ describe('JS6 Lab Tests:', () => {
       })
       // Write tests to ensure it works for multiple examples
       // expect(arrayOfCharacters.filter.name((character) => character.isAWizard === true).to.equal('Howl', 'Gandalf'))
-    })
-
-    describe('Example Failed Test: Add Two Numbers', () => {
-      it('#Should fail', () => {
-        const movieCharacters = [
-          {
-            name: 'Howl',
-            isAWizard: true,
-            quote: `You're wearing that hat? After all the magic I used to make your dress pretty?`,
-          },
-          {
-            name: 'Kalcifer',
-            isAWizard: false,
-            quote: `I don't cook! I'm a scary and powerful fire demon!`,
-          },
-          {
-            name: 'Gandalf',
-            isAWizard: true,
-            quote: `You shall not pass!`,
-          },
-          {
-            name: 'Luke Skywalker',
-            isAWizard: false,
-            quote: `May the Force be with you.`,
-          },
-        ]
-       
-        function onlyWizards(arrayOfCharacters) {
-          return arrayOfCharacters.filter((character) => character.isAWizard === true)
-        }
-      
-        console.table(onlyWizards(movieCharacters))
-
-        expect(onlyWizards(movieCharacters.name)).to.equal('Howl', 'Gandalf')
-      })
     })
   })
 
