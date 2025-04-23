@@ -38,18 +38,18 @@ const assert = chai.assert
 
 describe('JS6 Lab Tests:', () => {
   describe('Example Question Test: Add Two Numbers', () => {
-    it('#Should return the sum of two numbers', () => {
+    it('#Should return the sum of two numbers', () => { // string and function
       // Copy & paste your debugged code from JS6Lab.js
       function addTwoNumbers(num1, num2) {
         return num1 + num2
       }
       // Write tests to ensure it works for multiple examples
       expect(addTwoNumbers(2, 3)).to.equal(5)
-      expect(addTwoNumbers(9, 17)).to.equal(26)
+      expect(addTwoNumbers(-9, 17)).to.equal(8)
       expect(addTwoNumbers(750, 250)).to.equal(1000)
       expect(addTwoNumbers(132780, 443378)).to.equal(576158)
     })
-
+// Don't really need this section. It's just a demonstration of what a failed test looks like
     describe('Example Failed Test: Add Two Numbers', () => {
       it('#Should fail', () => {
         function sumOfTwoNumbers(num1, num2) {
@@ -60,15 +60,17 @@ describe('JS6 Lab Tests:', () => {
       })
     })
   })
+
   /*--------------------------NEW TESTS BELOW-------------------------------*/
 })
 describe('JS6 Lab Tests:', () => {
   describe('Question 1a Test: Sorted Array of Numbers', () => {
     it('#Should return the sorted elements in the array', () => {
       // Copy & paste your debugged code from JS6Lab.js
-      const arrayOfNumbers = [1, 5, 3, 2, 4]
-        arrayOfNumbers.sort((a, b) => a - b)
-      console.log(arrayOfNumbers)
+      function arrayOfNumbers (array) {
+        return array.sort((a, b) => a - b)
+      }
+
       // Write tests to ensure it works for multiple examples
       expect(arrayOfNumbers([86, 32, 15, 96, 8])).to.equal([8,15, 32, 86, 96])
       expect(arrayOfNumbers([6, 3, 8, 9])).to.equal([3, 6, 8, 9])
@@ -94,45 +96,21 @@ describe('JS6 Lab Tests:', () => {
           removeMoney(amount) {
             this.money -= amount
           }
+
+          getMoney() {
+            return this.money
+          }
         }
-        
-        const myWallet = new Wallet(100)
-        myWallet.removeMoney(14.99)
-        myWallet.addMoney(3)
         
         console.log(myWallet.money)
       // Write tests to ensure it works for multiple examples
-      expect(myWallet.money(1000)).to.equal(1000)
+      expect(myWallet.getMoney(1000)).to.equal(1000)
       expect(myWallet.removeMoney(800)).to.equal(200)
       expect(myWallet.addMoney(300)).to.equal(500)
       expect(myWallet.addMoney(250)).to.equal(750)
+      expect(myWallet.removeMoney(1000)).to.equal(-250)
     });
-    describe('Example Failed Test: Add Two Numbers', () => {
-      it('#Should fail', () => {
-        class Wallet {
-          constructor(startingMoney) {
-            this.money = startingMoney
-          }
-        
-          addMoney(amount) {
-            this.money += amount
-          }
-        
-          removeMoney(amount) {
-            this.money -= amount
-          }
-        }
-        
-        const myWallet = new Wallet(100)
-        myWallet.removeMoney(14.99)
-        myWallet.addMoney(3)
-        
-        console.log(myWallet.money)
-
-        expect(sumOfTwoNumbers(myWallet.addMoney(3))).to.equal(88.01)
-    })
   });
-});
 
 /*--------------------------QUESTION 1c-------------------------------*/
 
